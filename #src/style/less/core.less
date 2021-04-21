@@ -1,0 +1,80 @@
+
+//-----===== Базовые настройки ====-----//
+
+body {
+  background: @background-body;
+  color: @color-body;
+  font-weight: @font-weight-body;
+  font-size: @font-size-body;
+  font-family: @font-family-body;
+  line-height: @line-height-body;
+}
+
+img{
+  max-width:100%;
+}
+
+//-----===== Служебные класы - начало ====-----//
+
+// скрывает блок
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0,0,0,0);
+  overflow: hidden;
+}
+
+// отменяет обтекания блока
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+// Кнопка на сайте
+.button{
+  .fun-px-tp-em(@px:14px);
+
+  background-color: transparent;
+  border: 2px solid @white;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0;
+  appearance: none;
+  width: 170px;
+  font-size: @em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  line-height: 50px;
+  color: @white;
+  text-transform: uppercase;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.3s background-color, 0.3s border;
+
+  &:hover{
+    background-color: darken(@orange, 15%);
+    border: 2px solid darken(@orange, 15%);
+  }
+}
+
+//-----===== Служебные класы - конец ====-----//
+
+//-----===== Общие стили - начало ====-----//
+
+.container{
+  .mix-min-max(@viewport-min, @viewport-container, 0);
+}
+
+.wrapper{
+  .mix-min-max(@viewport-min, @viewport-max, 15px);
+}
+
+//-----===== Общие стили - конец ====-----//

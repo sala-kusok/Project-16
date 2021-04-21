@@ -1,0 +1,95 @@
+@descriptionText: #464646;
+@descriptionBorder: #2f2f2f;
+@descriptionColorList: #959595;
+
+.description{
+
+  &__title{
+    .fun-px-tp-em(@px:30px);
+
+    font-size: @em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: @white;
+    text-transform: uppercase;
+    margin: 25px 0;
+    position: relative;
+
+    &::before{
+      content: '';
+      background-color: @descriptionBorder;
+      width: 70px;
+      height: 2px;
+      display: block;
+      position: absolute;
+      top: -25px;
+      left: 0;
+    }
+  }
+
+  &__text{
+    .fun-px-tp-em(@px:14px);
+
+    font-size: @em;
+    line-height: 1.429;
+    color: @descriptionText;
+    margin: 25px 0;
+  }
+
+  &__list{
+    margin: 25px 0;
+    padding: 0 0 0 52px;
+    list-style: none;
+  }
+
+  &__item{
+    .fun-px-tp-em(@px:14px);
+
+    font-size: @em;
+    margin-bottom: 20px;
+    color: @descriptionColorList;
+    line-height: 1.286;
+    position: relative;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      background-color: @orange;
+      width: 8px;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+  }
+
+  // Мадификатор белый текст и линия.
+  &_color_white{
+
+    .description__title{
+
+      &::before{
+        background-color: @white;
+      }
+    }
+
+    .description__text{
+      color: @white;
+    }
+  }
+
+  // Мадификатор текст и линия по центру.
+  &_text_center{
+    text-align: center;
+
+    .description__title{
+
+      &::before{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+    }
+  }
+
+}

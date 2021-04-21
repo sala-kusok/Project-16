@@ -1,0 +1,46 @@
+@headerBg: #252525;
+
+.header{
+  background: @headerBg;
+  border-bottom: 4px solid @orange;
+
+  &__wrap{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__logo{
+    flex: 0 0 auto;
+  }
+
+  &__img{
+    display: block;
+  }
+
+  &__nav{
+    flex: 0 0 auto;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .header{
+
+    &__wrap{
+      padding-top: 25px;
+      padding-bottom: 20px;
+      flex-direction: column;
+    }
+
+    &__logo{
+      margin-bottom: 15px;
+    }
+
+  }
+}

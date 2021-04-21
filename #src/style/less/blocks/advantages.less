@@ -1,0 +1,125 @@
+@advantagesBg: #252525;
+@advantagesBorder: #363636;
+@advantagesIcon-Subtitle: #636363;
+@advantagesText: #555555;
+
+.advantages{
+  background-color: @advantagesBg;
+
+  &__title{
+    &:extend(.visually-hidden);
+  }
+
+  &__wrap{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px,auto));
+    grid-column-gap: 35px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &__element{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    padding: 0 0 10px 0;
+    margin: 0 0 25px 0;
+
+    &::after{
+      content: '';
+      background-color: @orange;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 70px;
+      height: 2px;
+      display: block;
+    }
+
+    &:hover{
+
+      .advantages__icon-box{
+        border: 1px solid @orange;
+      }
+
+      .advantages__svg{
+        fill: @orange;
+      }
+
+      .advantages__subtitle{
+        color: @orange;
+      }
+
+      .advantages__text{
+        color: @white;
+      }
+
+    }
+  }
+
+  &__icon-box{
+    border: 1px solid @advantagesBorder;
+    border-radius: 50%;
+    width: 104px;
+    height: 104px;
+    margin: 25px 0;
+    position: relative;
+    transition: 0.4s border;
+  }
+
+  &__svg{
+    height: 40px;
+    fill: @advantagesIcon-Subtitle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.4s fill;
+  }
+
+  &__subtitle{
+    .fun-px-tp-em(@px:18px);
+
+    font-size: @em;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+    color: @advantagesIcon-Subtitle;
+    text-transform: uppercase;
+    line-height: 1.111;
+    margin: 0;
+    transition: 0.4s color;
+  }
+
+  &__text {
+    .fun-px-tp-em(@px:14px);
+
+    font-size: @em;
+    line-height: 1.429;
+    color: @advantagesText;
+    margin: 15px 0;
+    transition: 0.4s color;
+  }
+
+}
+
+@media (max-width: 480px) {
+  
+  .advantages{
+    text-align: center;
+
+    &__icon-box{
+      margin: 25px auto;
+    }
+
+    &__element{
+
+      &::after{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+  }
+  
+}

@@ -1,0 +1,88 @@
+@inputBG: #202020;
+
+.form{
+
+  &__input{
+    margin: 0 0 16px 0;
+
+    label{
+      &:extend(.visually-hidden);
+
+    }
+
+    input{
+      border-radius: 10px;
+      background-color: @inputBG;
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      padding: 18px 30px;
+      outline: none;
+
+      .fun-px-tp-em(@px:20px);
+
+      font-size: @em;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      line-height: 24px;
+      color: @white;
+
+      &::placeholder{
+        color: @white;
+      }
+
+    }
+
+  }
+
+  &__textarea{
+    margin: 0 0 20px 0;
+
+    label{
+      &:extend(.visually-hidden);
+    }
+
+    textarea{
+      border-radius: 10px;
+      background-color: @inputBG;
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      padding: 18px 30px;
+      height: 200px;
+      resize: none;
+      outline: none;
+
+      .fun-px-tp-em(@px:20px);
+
+      font-size: @em;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      line-height: 24px;
+      color: @white;
+
+      &::placeholder{
+        color: @white;
+      }
+    }
+  }
+
+  &__button{
+    &:extend(.button all);
+
+    &_width{
+      display: block;
+      width: 100%;
+      background-color: @orange;
+      border: 2px solid @orange;
+
+      .fun-px-tp-em(@px:20px);
+
+      font-size: @em;
+      font-weight: 800;
+      line-height: 60px;
+      margin: 20px 0 30px 0;
+    }
+  }
+
+}

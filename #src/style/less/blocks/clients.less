@@ -1,0 +1,34 @@
+@clientsBg: #202020;
+
+.clients{
+  background-color: @clientsBg;
+
+  &__wrap{
+    padding-top: 80px;
+    padding-bottom: 130px;
+  }
+
+  &__description{
+    margin-bottom: 50px;
+  }
+
+  &__carousel{
+    padding: 0 80px;
+    box-sizing: border-box;
+  }
+
+  &__element{
+
+  }
+
+  &__img{
+    display: block;
+    opacity: 0.2;
+    transition: 0.4s opacity;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+}

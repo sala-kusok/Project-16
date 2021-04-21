@@ -1,0 +1,192 @@
+@elementIconBg: #252525;
+@elementCategory: #959595;
+
+.element{
+  position: relative;
+  height: 100%;
+  user-select: none;
+
+  &:hover{
+
+
+    .element__information{
+      opacity: 1;
+    }
+  }
+
+  &__img-box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__information{
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    border: 5px solid @orange;
+    background-color: rgba(17, 17, 17, 0.85);
+    padding: 20px 20px 85px 20px;
+    z-index: 5;
+    opacity: 0;
+    transition: 0.4s opacity;
+  }
+
+  &__title{
+    .fun-px-tp-em(@px:24px);
+
+    font-size: @em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 15px 0;
+
+    a{
+      color: @white;
+      text-decoration: none;
+    }
+  }
+
+  &__info{
+    .fun-px-tp-em(@px:12px);
+
+    font-size: @em;
+    color: @elementCategory;
+    text-transform: uppercase;
+    line-height: 1.667;
+    margin: 0;
+
+    &::after{
+      content: '';
+      display: block;
+      margin: 30px 0 0 0;
+      background-color: @orange;
+      width: 70px;
+      height: 2px;
+    }
+  }
+
+  &__icon{
+    display: flex;
+    position: absolute;
+    right: 30px;
+    bottom: 34px;
+  }
+
+  &__btn, &__link{
+    border-radius: 50%;
+    background-color: @elementIconBg;
+    display: block;
+    width: 42px;
+    height: 42px;
+    appearance: none;
+    padding: 0;
+    border: none;
+    transition: 0.5s background-color;
+    position: relative;
+    margin: 0 4px;
+    cursor: pointer;
+
+    &:hover{
+      background-color: @orange;
+    }
+
+  }
+
+  &__link{
+
+  }
+
+  &__svg{
+    max-width: 100%;
+    height: 15px;
+    fill: @white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  //Мадификатор Который меняе позицию Заголовка и иконки.
+  &_position{
+
+    &:hover{
+
+      .element__information{
+
+        &::before{
+          opacity: 1;
+        }
+      }
+    }
+
+    .element__information{
+      padding: 85px 20px 30px 20px;
+      opacity: 1;
+      border: 0 solid @orange;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      &::before{
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: 5px solid @orange;
+        background-color: rgba(17, 17, 17, 0.85);
+        opacity: 0;
+        transition: 0.4s opacity;
+        z-index: -99;
+      }
+    }
+
+    .element__info{
+
+      strong{
+        color: @white;
+        font-weight: normal;
+      }
+    }
+
+    .element__icon{
+      right: auto;
+      bottom: auto;
+      left: 25px;
+      top: 25px;
+    }
+
+    .element__link{
+      border-radius: 0;
+      background-color: @black;
+
+      &:hover{
+        background-color: @orange;
+      }
+    }
+
+  }
+
+  .element__information--active{
+    opacity: 1;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+}

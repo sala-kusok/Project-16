@@ -1,0 +1,68 @@
+@progressTooltipBg: #252525;
+
+.progress{
+
+  &__item{
+    margin: 0 0 20px 0;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  &__name{
+    .fun-px-tp-em(@px:14px);
+
+    font-size: @em;
+    font-family: 'Raleway', sans-serif;
+    color: @white;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0 0 10px 0;
+  }
+
+  &__element{
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 2px;
+    width: 100%;
+  }
+
+  &__line{
+    background-color: @white;
+    width: 0;
+    height: 4px;
+    position: relative;
+  }
+
+  &__tooltip{
+    .fun-px-tp-em(@px:11px);
+
+    font-size: @em;
+    font-weight: 700;
+    line-height: 1.2;
+    position: absolute;
+    top: -30px;
+    right: -15px;
+    color: @white;
+    background-color: @progressTooltipBg;
+    padding: 3px 5px;
+    border-radius: 3px;
+    display: none;
+
+    &::after{
+      content: '';
+      border-top: 5px solid @progressTooltipBg;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      display: block;
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+}
